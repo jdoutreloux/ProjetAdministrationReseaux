@@ -20,6 +20,7 @@ docker exec -it bind bash
 ------------------------ CONFIGURATION fICHIER NAME.CONF ------------------------
 ---------------------------------------------------------------------------------
 
+// se trouve dans /etc/bind/name.conf.local pour ici
 //Zone sur laquelle on a autorite
 zone "wt2.ephec-ti.be" IN {
 	type master; // serveur maitre
@@ -30,6 +31,7 @@ zone "wt2.ephec-ti.be" IN {
 ------------------------- CONFIGURATION fICHIER DE ZONE -------------------------
 ---------------------------------------------------------------------------------
 
+//se trouve dans wt2.ephec-ti.be.hosts
 $TTL 86400
 $ORIGIN wt2.ephec-ti.be
 @       IN      SOA     b24cd84782da.wt2.ephec-ti.be. root.wt2.ephec-ti.be. (
