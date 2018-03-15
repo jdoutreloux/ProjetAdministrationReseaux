@@ -1,0 +1,46 @@
+
+---------------------------------------------------------------------------------
+------------------------------- CONFIGURATION DNS -------------------------------
+---------------------------------------------------------------------------------
+
+// pull une image bind9 pour du dns
+docker pull sameersbn/bind:latest
+
+// run l'image docker
+sudo docker run -d --name=bind --dns=127.0.0.1 --publish=53:53/udp --publish=10000:10000 
+				   --volume=/srv/docker/bind:/data --env='ROOT_PASSWORD=PSWD' sameersbn/bind:latest
+
+// verification des ports ouverts
+ufw status
+
+// acces au bash du container (bind)
+docker exec -it bind bash
+
+---------------------------------------------------------------------------------
+------------------------ CONFIGURATION fICHIER NAME.CONF ------------------------
+---------------------------------------------------------------------------------
+
+//Zone sur laquelle on a autorite
+zone "wt2.ephec-ti.be" IN {
+	type master; // serveur maitre
+	file "wt2.ephec-ti.be.hosts"
+};
+
+---------------------------------------------------------------------------------
+------------------------- CONFIGURATION fICHIER DE ZONE -------------------------
+---------------------------------------------------------------------------------
+
+$TTL 86400
+$ORIGIN wt2.ephec-ti.be
+@       IN      SOA     b24cd84782da.wt2.ephec-ti.be. root.wt2.ephec-ti.be. (
+
+                        20181302        ; serial
+                        21600           ; refresh after 6 hours
+                        3600            ; retry after 1 hour
+                        604800          ; expires after 1 week
+                        86400           ; minimum TTL 1 day
+)
+
+                        IN      NS                      b24cd84782da.wt2.ephec-ti.be.
+b24cd84782da            IN      A                       54.37.65.43
+www                     IN      A                       1.2.3.4
