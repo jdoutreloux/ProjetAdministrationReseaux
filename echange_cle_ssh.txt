@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------
+------------------ ECHANGE DES CLES POUR UNE COMMUNICATION SSH ------------------
+---------------------------------------------------------------------------------
+
+//genere cle publique et cle privee
+ssh-keygen -b 4096
+
+// copie de la cle publique sur le vps dans les authorized_keys dans .ssh
+ssh-copy-id -i ~/.ssh/id_rsa.pub louismoi@vps517640.ovh.net
+
