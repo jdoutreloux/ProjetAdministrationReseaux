@@ -32,9 +32,12 @@ zone "wt2.ephec-ti.be" IN {
 ---------------------------------------------------------------------------------
 
 //se trouve dans wt2.ephec-ti.be.hosts
+
 $TTL 86400
+
 $ORIGIN wt2.ephec-ti.be
-@       IN      SOA     b24cd84782da.wt2.ephec-ti.be. root.wt2.ephec-ti.be. (
+
+@       IN      SOA     mondns.wt2.ephec-ti.be. root.wt2.ephec-ti.be. (
 
                         20181302        ; serial
                         21600           ; refresh after 6 hours
@@ -43,6 +46,6 @@ $ORIGIN wt2.ephec-ti.be
                         86400           ; minimum TTL 1 day
 )
 
-                        IN      NS                      b24cd84782da.wt2.ephec-ti.be.
-b24cd84782da            IN      A                       54.37.65.43
-www                     IN      A                       1.2.3.4
+wt2.ephec-ti.be.        IN      NS              mondns.wt2.ephec-ti.be.
+mondns.wt2.ephec-ti.be. IN      A               54.37.65.43
+www                     IN      A               1.2.3.4
