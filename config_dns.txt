@@ -66,6 +66,8 @@ options {
 ---------------------------------------------------------------------------------
 ------------------------- CONFIGURATION fICHIER DE ZONE -------------------------
 ---------------------------------------------------------------------------------
+//se trouve dans wt2.ephec-ti.be.hosts
+
 $TTL 86400
 
 $ORIGIN wt2.ephec-ti.be.
@@ -81,7 +83,17 @@ $ORIGIN wt2.ephec-ti.be.
 
 
 
-wt2.ephec-ti.be.		IN      NS              mondns.wt2.ephec-ti.be.
-mondns.wt2.ephec-ti.be. IN      A               54.37.65.43
-www.wt2.ephec-ti.be.    IN      A               54.37.65.110
+wt2.ephec-ti.be.                IN      NS              mondns.wt2.ephec-ti.be.
+mondns.wt2.ephec-ti.be.         IN      A               54.37.65.43
+serveurWeb                      IN      A               54.37.65.110
+www                             IN      CNAME           serveurWeb
+intranet                        IN      CNAME           serveurWeb
+www.intranet                    IN      CNAME           serveurWeb
+b2B                             IN      CNAME           serveurWeb
+www.b2B                         IN      CNAME           serveurWeb
+mail                            IN      MX              mail.wt2.ephec-ti.be.
+mail.wt2.ephec-ti.be.           IN      A               54.37.65.92
+imap                            IN      CNAME           mail.wt2.ephec-ti.be.
+smtp                            IN      CNAME           mail.wt2.ephec-ti.be.
+
 
