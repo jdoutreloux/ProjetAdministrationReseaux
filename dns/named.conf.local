@@ -1,0 +1,27 @@
+acl internals {
+    localhost;
+    54.37.65.110;
+    54.37.65.43;
+};
+
+view internal {
+    match-clients { internals; };
+    recursion yes;
+    allow-recursion { internals; };
+    forwarders {
+        8.8.8.8;
+        8.8.4.4;
+    };
+    zone "wt2.ephec-ti.be" {
+        type master;
+        file "/etc/bind/db.internal.wt2.ephec-ti.be";
+    };
+};
+
+view external {
+    match-clients { any; };
+    zone "wt2.ephec-ti.be" {
+        type master;
+        file "/etc/bind/db.wt2.ephec-ti.be";
+    };
+};
