@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+        ServerAdmin test@wt2.ephec-ti.be
+        ServerName www.wt2.ephec-ti.be
+        ServerAlias wt2.ephec-ti.be
+
+        DocumentRoot /var/www/site/staticSite
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /var/www/site/staticSite>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+        </Directory>
+</VirtualHost>

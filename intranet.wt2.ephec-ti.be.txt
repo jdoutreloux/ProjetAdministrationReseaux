@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+        #ServerAdmin votre-mail@monsite1.fr
+        ServerName www.intranet.wt2.ephec-ti.be
+        ServerAlias intranet.wt2.ephec-ti.be
+
+        DocumentRoot /var/www/site/intranet
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /var/www/site/intranet>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+        </Directory>
+</VirtualHost>
