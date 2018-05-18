@@ -1,0 +1,11 @@
+.bash_history
+.bash_logout
+.bashsrc
+.cache
+dead.letter
+.profile
+.ssh/*
+.viminfo
+.sudo_as_admin_successful
+Mail/config
+Mail/.docker-compose.yml.swp
