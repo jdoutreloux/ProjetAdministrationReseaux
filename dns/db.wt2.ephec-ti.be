@@ -1,6 +1,6 @@
 $ORIGIN wt2.ephec-ti.be.
 $TTL	86400
-@	IN	SOA	ns.wt2.ephec-ti.be root.wt2.ephec-ti.be (
+@	IN	SOA	ns.wt2.ephec-ti.be. root.wt2.ephec-ti.be. (
 		 	2018042006	; Serial
 			 604800		; Refresh
 			  86400		; Retry
