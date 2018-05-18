@@ -7,13 +7,13 @@ services:
     container_name: ${CONTAINER_NAME}
     ports:
     - "25:25"
-    - "143:143"
     - "587:587"
     - "993:993"
     volumes:
     - maildata:/var/mail
     - mailstate:/var/mail-state
     - ./config/:/tmp/docker-mailserver/
+    - /home/ubuntu/docker/letsencrypt/etc/:/etc/letsencrypt/
     environment:
     - DMS_DEBUG=${DMS_DEBUG}
     - ENABLE_CLAMAV=${ENABLE_CLAMAV}
