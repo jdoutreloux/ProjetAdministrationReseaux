@@ -4,14 +4,18 @@
         ServerAlias intranet.wt2.ephec-ti.be
 
         DocumentRoot /var/www/site/intranet
-        <Directory />
-                Options FollowSymLinks
-                AllowOverride None
-        </Directory>
+        #<Directory />
+        #        Options FollowSymLinks
+        #        AllowOverride None
+        #</Directory>
         <Directory /var/www/site/intranet>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride None
                 Order allow,deny
-                allow from all
+                allow from 217.64.113.54
+                allow from 172.17.0.0/16
+                allow from 54.37.65.43
+                allow from 54.37.65.110
+                allow from 54.37.65.92
         </Directory>
 </VirtualHost>
